@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FDD899B8-EC5A-4D44-A7CE-777836F0AAA8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6" : "Projects\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Storyplay",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Tries\/MyPlayground\/Storyplay\/Storyplay.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/10.26.5.12\/dchat-4.2.0",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6"
+    }
+  ]
+}
