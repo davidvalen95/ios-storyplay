@@ -12,7 +12,7 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FDD899B8-EC5A-4D44-A7CE-777836F0AAA8",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6" : "..\/..",
-    "96D3FA5268B2F686F093E7BFA9718CC8F0B0ADD4" : "Storyplay\/"
+    "96D3FA5268B2F686F093E7BFA9718CC8F0B0ADD4" : "ios\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Storyplay",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
