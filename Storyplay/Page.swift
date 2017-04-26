@@ -13,8 +13,8 @@ class CPage{
     
     let _story: EStory?
     
-    var _firstChoice: SChoice?
-    var _secondChoice: SChoice?
+    var _firstChoice: SChoice? = nil
+    var _secondChoice: SChoice? = nil
     
     
     init(story:EStory){
@@ -46,12 +46,12 @@ class CPage{
         }
         
         
-        return self
+        return page
     }
     
-}
+}//CPage
 
-struct SChoice{
+class SChoice{
     let _title: String?
     let _page: CPage?
     
@@ -65,11 +65,34 @@ struct SChoice{
         _title = title
         _page = page
     }
-}
+}//SChoice
+
+struct SAdventure {
+     var story: CPage
+    
+  
+
+    
+    init(){
+        self.story = CPage(story: .returnTrip)
+        let pageTouchDown = self.story.addChoiceWith(title: "Stop and Investigate", story: .touchDown)
+        let pageRover = pageTouchDown.addChoiceWith(title: "Explore the Rover", story: .rover)
+        let pageCrate = pageTouchDown.addChoiceWith(title: "Open the Crate", story: .crate)
+
+        let pageHomeWard = self.story.addChoiceWith(title: "Continue home to Earth", story: .homeward)
+        pageHomeWard.addChoiceWith(title: "Head back to Mars", page: pageTouchDown)
+        let pageHome = pageHomeWard.addChoiceWith(title: "Continue Home to Earth", story: .home)
+        
+        let pageCave = pageRover.addChoiceWith(title: "Explore the Coordinates", story: .cave)
+        pageRover.addChoiceWith(title: "Return to Earth", page: pageHome)
+        
+        pageCave.addChoiceWith(title: "Continue towards faint light", story: .droid)
+        pageCave.addChoiceWith(title: "Refill the ship and explore the rover", page: pageRover)
+        
+        pageCrate.addChoiceWith(title: "Explore the Rover", page: pageRover)
+        pageCrate.addChoiceWith(title: "Use the key", story: .monster)
 
 
-struct SAdventure{
-    static var story: CPage = CPage(story: EStory.returnTrip)
-    
-    
-}
+       
+    }
+}//SAdv

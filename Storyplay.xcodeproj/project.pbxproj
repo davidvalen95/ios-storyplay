@@ -16,6 +16,7 @@
 		4419E4A01EAF1F91005B793C /* StoryplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419E49F1EAF1F91005B793C /* StoryplayUITests.swift */; };
 		4419E4E61EAF315D005B793C /* EStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419E4E51EAF315D005B793C /* EStory.swift */; };
 		4419E4E81EAF3921005B793C /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419E4E71EAF3921005B793C /* Page.swift */; };
+		4456360F1EB07CA700FC3690 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456360E1EB07CA700FC3690 /* PageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		4419E4A11EAF1F92005B793C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4419E4E51EAF315D005B793C /* EStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EStory.swift; sourceTree = "<group>"; };
 		4419E4E71EAF3921005B793C /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		4456360E1EB07CA700FC3690 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				4419E4E41EAF3144005B793C /* Story */,
 				4419E47F1EAF1F8D005B793C /* AppDelegate.swift */,
 				4419E4811EAF1F8E005B793C /* ViewController.swift */,
+				4456360E1EB07CA700FC3690 /* PageController.swift */,
 				4419E4831EAF1F8F005B793C /* Main.storyboard */,
 				4419E4861EAF1F90005B793C /* Assets.xcassets */,
 				4419E4881EAF1F91005B793C /* LaunchScreen.storyboard */,
@@ -280,6 +283,7 @@
 				4419E4801EAF1F8D005B793C /* AppDelegate.swift in Sources */,
 				4419E4E81EAF3921005B793C /* Page.swift in Sources */,
 				4419E4E61EAF315D005B793C /* EStory.swift in Sources */,
+				4456360F1EB07CA700FC3690 /* PageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +437,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VKR5HN9EDW;
 				INFOPLIST_FILE = Storyplay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rumahproject.Storyplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,6 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VKR5HN9EDW;
 				INFOPLIST_FILE = Storyplay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rumahproject.Storyplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -530,6 +536,7 @@
 				4419E4A61EAF1F92005B793C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4419E4A71EAF1F92005B793C /* Build configuration list for PBXNativeTarget "StoryplayTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +545,7 @@
 				4419E4A91EAF1F92005B793C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4419E4AA1EAF1F92005B793C /* Build configuration list for PBXNativeTarget "StoryplayUITests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +554,7 @@
 				4419E4AC1EAF1F92005B793C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
