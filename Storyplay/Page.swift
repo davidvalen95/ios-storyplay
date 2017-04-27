@@ -68,31 +68,33 @@ class SChoice{
 }//SChoice
 
 struct SAdventure {
-     var story: CPage
-    
-  
-
-    
-    init(){
-        self.story = CPage(story: .returnTrip)
-        let pageTouchDown = self.story.addChoiceWith(title: "Stop and Investigate", story: .touchDown)
-        let pageRover = pageTouchDown.addChoiceWith(title: "Explore the Rover", story: .rover)
+    static func getStory( name:String) -> CPage{
+        let story = CPage(story: .returnTrip(name: name))
+        let pageTouchDown = story.addChoiceWith(title: "Stop and Investigate", story: .touchDown)
+        let pageRover = pageTouchDown.addChoiceWith(title: "Explore the Rover", story: .rover(name: name))
         let pageCrate = pageTouchDown.addChoiceWith(title: "Open the Crate", story: .crate)
-
-        let pageHomeWard = self.story.addChoiceWith(title: "Continue home to Earth", story: .homeward)
+        
+        let pageHomeWard = story.addChoiceWith(title: "Continue home to Earth", story: .homeward)
         pageHomeWard.addChoiceWith(title: "Head back to Mars", page: pageTouchDown)
         let pageHome = pageHomeWard.addChoiceWith(title: "Continue Home to Earth", story: .home)
         
         let pageCave = pageRover.addChoiceWith(title: "Explore the Coordinates", story: .cave)
         pageRover.addChoiceWith(title: "Return to Earth", page: pageHome)
         
-        pageCave.addChoiceWith(title: "Continue towards faint light", story: .droid)
+        pageCave.addChoiceWith(title: "Continue towards faint light", story: .droid(name: name))
         pageCave.addChoiceWith(title: "Refill the ship and explore the rover", page: pageRover)
         
         pageCrate.addChoiceWith(title: "Explore the Rover", page: pageRover)
         pageCrate.addChoiceWith(title: "Use the key", story: .monster)
+        
+        return story
 
+    }
+    
+  
 
-       
+    
+    init(){
+        
     }
 }//SAdv

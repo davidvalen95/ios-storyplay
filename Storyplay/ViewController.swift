@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var outletTVName: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,7 +29,13 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kSegueIdentifierStartAdventure{
             guard let pageController = segue.destination as? PageController else {return}
-            pageController._page = SAdventure().story
+            if outletTVName.text == "" {
+                let UIAl
+                return
+            }else{
+                pageController._page = SAdventure.getStory(name: outletTVName.text!)
+            }
+            
             
             
         }

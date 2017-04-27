@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,6 +32,12 @@
                                     <segue destination="FkP-GG-iwT" kind="show" identifier="segueStartAdventure" id="ukL-92-Epd"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lOX-D9-xa2">
+                                <rect key="frame" x="40" y="519" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -38,11 +45,18 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="95c-HR-irD" secondAttribute="bottom" constant="48" id="BQh-Jr-gCx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IH9-sF-M4k" secondAttribute="bottom" id="C4C-89-Chh"/>
                             <constraint firstItem="IH9-sF-M4k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FR5-qD-Reh"/>
+                            <constraint firstItem="95c-HR-irD" firstAttribute="top" secondItem="lOX-D9-xa2" secondAttribute="bottom" constant="40" id="Fuh-an-3uZ"/>
+                            <constraint firstItem="lOX-D9-xa2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="HL6-Nc-C3h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lOX-D9-xa2" secondAttribute="trailing" constant="24" id="cHm-LT-DYz"/>
                             <constraint firstItem="IH9-sF-M4k" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="h1V-bu-QBf"/>
+                            <constraint firstItem="lOX-D9-xa2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nci-PH-Evw"/>
                             <constraint firstItem="95c-HR-irD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oX4-hN-aeB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wTs-n0-XL9"/>
+                    <connections>
+                        <outlet property="outletTVName" destination="lOX-D9-xa2" id="npf-xV-Kef"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

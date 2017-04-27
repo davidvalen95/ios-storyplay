@@ -15,8 +15,17 @@ class PageController: UIViewController {
     var _page:CPage? = nil
     
     // MARK: - user interface properties
-    let artworkView         = UIImageView()
-    let storyLabel          = UILabel()
+    let artworkView: UIImageView = {
+        let uiImageView = UIImageView()
+        uiImageView.translatesAutoresizingMaskIntoConstraints = false
+        return uiImageView
+    }()
+    let storyLabel: UILabel = {
+        let uiLabel: UILabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        return uiLabel
+        
+    }()
     let firstChoiceButton   = UIButton(type: UIButtonType.system)
     let secondChoiceButton  = UIButton(type: UIButtonType.system)
     
@@ -70,7 +79,7 @@ class PageController: UIViewController {
         super.viewWillLayoutSubviews()
         
         
-        artworkView.translatesAutoresizingMaskIntoConstraints = false
+       
         
         
         super.view.addSubview(artworkView)
@@ -81,9 +90,6 @@ class PageController: UIViewController {
             artworkView.rightAnchor.constraint(equalTo: view.rightAnchor)
             
             ])
-        
-        storyLabel.numberOfLines = 0
-        storyLabel.translatesAutoresizingMaskIntoConstraints = false
         super.view.addSubview(storyLabel)
         NSLayoutConstraint.activate(
         [
@@ -132,6 +138,7 @@ class PageController: UIViewController {
     
     func buttonPlayAgain(){
         super.navigationController?.popToRootViewController(animated: true)
+        
     }
    
 
