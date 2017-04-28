@@ -23,6 +23,7 @@ class PageController: UIViewController {
     let storyLabel: UILabel = {
         let uiLabel: UILabel = UILabel()
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.numberOfLines = 0 
         return uiLabel
         
     }()
