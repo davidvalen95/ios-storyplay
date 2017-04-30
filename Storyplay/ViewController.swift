@@ -15,18 +15,23 @@ enum ErrorTextField:Error{
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var constraintTvNameBottom: NSLayoutConstraint!
     @IBOutlet weak var outletTVName: UITextField!
+    var _defaultPosition:[NSLayoutConstraint:CGFloat] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
       
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationKeyboardShow(_:)), name: Notification.Name.UIKeyboardWillShow, object: <#T##Any?#>)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationKeyboardShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationKeyboardShow(_:)), name: Notification.Name.UIKeyboardWillHide , object: nil)
         
         
         outletTVName.addTarget(self, action: #selector(self.editingChanged(textField:)), for: .editingChanged)
         
-         }
+        _defaultPosition.updateValue(constraintTvNameBottom.constant, forKey: constraintTvNameBottom)
+     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -69,13 +74,80 @@ class ViewController: UIViewController {
         print (textField.text)
     }
     
-    func notificationKeyboardShow(_ notification: Notification){
-        print("Keyboard will show")
+    func notificationKeyboardShow(_ notification:
+        Notification){
+        if notification.name == Notification.Name.UIKeyboardWillShow{
+        
+            print(notification)
+            if let info = notification.userInfo, let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+                let frame = keyboardFrame.cgRectValue
+                constraintTvNameBottom.constant = frame.size.height + 10
+            
+                            UIView.animate(withDuration: 0.8){
+                    self.view.layoutIfNeeded()
+                }
+                
+            }//if let
+        }//if name
+        
+        else if notification.name == Notification.Name.UIKeyboardWillHide{
+            constraintTvNameBottom.constant = _defaultPosition[constraintTvNameBottom]!
+            
+            UIView.animate(withDuration: 0.8){
+                self.view.layoutIfNeeded()
+            }//animatee
+        }//else if
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
 
+    
+    
+    
 }
+
+
+extension ViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print(textField.text ?? "ok")
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print(textField.text ?? "ok")
+        return true
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
